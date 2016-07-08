@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World of Wonders - Photopage</title>
+    <link rel="stylesheet" href="../css/mystyle2.css" />
+    <link rel="stylesheet" href="../css/documentation.css" />
+    <link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rouge+Script' rel='stylesheet' type='text/css'>
+</head>
+    
+<body>
+    
+    <div id="page-wrapper" class="page-wrapper">
+        <div id="headerStrip" class="headerStrip">
+            <div class="title"><a href="home.html">A World of Wonders</a></div>
+            <nav class="topmenu">
+                <ul>
+                    <li class="topmenu-li"><a href="../about.html" target="_blank">About</a></li>
+                    <li class="topmenu-li"><a href="../mapview.html" target="_blank">Explore</a></li>
+                    <li class="topmenu-li"><a href="../../story/index.htm?../project/documentation/">Documentation</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="mobile-nav" class="mobile-nav mobile-nav-display-toggle">
+            <div class="mobile-top-nav">
+                <ul>
+                    <li class="mobile-top-nav-li"><a href="../about.html" target="_blank">About</a></li>
+                    <li class="mobile-top-nav-li"><a href="../mapview.html" target="_blank">Explore</a></li>
+                    <li class="mobile-top-nav-li"><a href="../../story/index.htm?../project/documentation/" target="_blank">Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="doc-container">
+            <div class="doc-heading">The Photo page</div>
+            <div class="doc-text"><p>This page shows the photos of a particular World Heritage site that was selected by clicking on the Google Map marker on the Mapview page.
+                The photos are large sized and are shown in a slide show with previous and next buttons. There are two jQuery files associated with this page: <a href="../js/slideshow.js" target="_blank">slideshow.js</a> and 
+                <a href="../js/photos.js" target="_blank">photos.js</a>. The CSS for this page is found <a href="../css/photos.css" target="_blank">here</a>
+                                  </p>
+
+            </div>
+            <div class="doc-subheading">Photo titles</div>
+            <div class="doc-text">
+                <p>This page features a slideshow that displays 10 photos. Each photo has a title and the display-name of the photographer. The slideshow has previous and 
+                    next buttons that cycle through each of them. Once a user goes to the next or previous photo, the title and display-name of the photographer are displayed 
+                    on top.
+                </p>
+                <p>When the user clicked on the View More Photos button, jQuery passed on the photo tag information to this page in a query string. The jQuery code
+                    for this page extracts this information and calls the 500px API fetch the ten photos. It also extracts data from the WHS_list text file and gathers all the information into 
+                    a two dimensional array. It uses this to match the tag passed into the query string with the tags present in the two dimensional array to verify the validity.
+                </p>
+                <p>Once the 500px API is called and the data is fetched, all the photo URLs are put into an array. At the same time, the title and display-name of the photographer is also collected
+                    from the JSON data and put into this array. Each photo URL in the array is then inserted into the <code>img</code> tags that make up the slideshow, and their titles and display-names are inserted into corresponding <code>div</code> tags 
+                    on top. 
+                </p>
+                <p>In case there is an error in retrieving data from the API, jQuery fires off an error function that alerts an error message along with the error code.</p>
+            </div>
+            <div class="doc-subheading">Slideshow</div>
+            <div class="doc-text">
+                <p>The HTML for the slideshow consists of a <code>div</code> container, and <code>figure</code> tags for each of the ten photos. Each <code>figure</code>
+                    tag contains within it an <code>img</code>tag. Initially, the <code>src</code> attributes of these image tags are empty. The containing div tag is relatively positioned, while
+                    each figure tag is absolutely positioned. Initially the first figure tag is given a class <code>show</code> that displays it. The same thing for the <code>div</code> tags for 
+                    the title and display-name. Once the user clicks on either the previous or next button, jQuery changes to the previous or next photo respectively, removes the <code>show</code> class from all <code>figure</code> tags,
+                    and reapplies it to the current photo. The same treatment is given to the title <code>div</code> and the display-name <code>div</code>.
+                </p>
+                
+            </div>
+            <div class="doc-subheading">Design for iPhone</div>
+            <div class="doc-text">
+                <p>The layout for the iPhone is quite different from that of desktop browsers. Instead of having a photo slideshow, I chose to
+                    have a simple layout of vertically stacked images one after the other, in a single column. This design choice ensures that the user can look at the photos in their maximum size fitting the iPhone screen.
+                    A slideshow would have caused the photo size to be smaller to make room for the previous and next buttons. Also, the simple layout in a single column is aesthetically better suited to small screens.
+                </p>
+                <p>The photo title and display-names of the photographers are inserted in the same manner as in the case of the desktop version.</p>
+            </div>
+            
+            <a href="#page-wrapper" class="text-decoration-none"><div class="back-top-link">Back to top</div></a>
+        </div>
+    </div>
+</body>
+</html>

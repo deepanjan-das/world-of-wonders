@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World of Wonders - Map view</title>
+    <link rel="stylesheet" href="../css/mystyle2.css" />
+    <link rel="stylesheet" href="../css/documentation.css" />
+    <link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rouge+Script' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div id="page-wrapper" class="page-wrapper">
+        <div id="headerStrip" class="headerStrip">
+            <div class="title"><a href="home.html">A World of Wonders</a></div>
+            <nav class="topmenu">
+                <ul>
+                    <li class="topmenu-li"><a href="../about.html" target="_blank">About</a></li>
+                    <li class="topmenu-li"><a href="../mapview.html" target="_blank">Explore</a></li>
+                    <li class="topmenu-li"><a href="../../story/index.htm?../project/documentation/">Documentation</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="mobile-nav" class="mobile-nav mobile-nav-display-toggle">
+            <div class="mobile-top-nav">
+                <ul>
+                    <li class="mobile-top-nav-li"><a href="../about.html" target="_blank">About</a></li>
+                    <li class="mobile-top-nav-li"><a href="../mapview.html" target="_blank">Explore</a></li>
+                    <li class="mobile-top-nav-li"><a href="../../story/index.htm?../project/documentation/" target="_blank">Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="doc-container">
+            <div class="doc-heading">World of Wonders - Mapview</div>
+            <div class="doc-text">The <a href="../mapview.html" target="_blank">Map View</a> page presents the user with a Google Map, showing the World Heritage sites marked on it. Clicking on them
+                allows the user to see details and photos. There are four APIs running on this page at once - 
+                <ul>
+                    <li>Google Maps API</li>
+                    <li>Flickr API</li>
+                    <li>WikiMedia API</li>
+                    <li>500px API</li>
+                </ul>
+                All these APIs work seamlessly together to bring a smooth experience to the user. The functionality is contained in the jQuery file <a href="../js/mapview.js" target="_blank">here</a>.
+            </div>
+            <div class="doc-subheading">Features</div>
+            <div class="doc-text">This page presents the user with a Google Maps section with markers that mark the location of various WHS sites around the globe. There is also
+                a box containing a photo and two buttons below it - "More Photos" &amp; "More on Wikipedia". Initially, clicking on these two buttons will only open the current page
+                on a new tab. On the desktop browser, there is empty space at the middle. When the user clicks on one of the markers on the map on the left, details of that WHS display
+                in the middle section. The information displayed are - 
+                <ul>
+                    <li>Name of the WHS </li>
+                    <li>The coordinates in latitude and longitudes</li>
+                    <li>Basic information about the WHS</li>
+                </ul>
+                The box on the right hand side now shows a relevant photo based on the clicked marker. The "More Photos" &amp; "More on Wikipedia" buttons are also activated. Clicking on the first 
+                one will open a up a new page showcasing the photos of the WHS as a slideshow, while clicking on the latter will take the user to the Wikipedia page of the WHS.
+            </div>
+            <div class="doc-subheading">The flat file</div>
+            <div class="doc-text">
+                The flat file is a text file <code>WHS_list.txt</code>. Each line contains information that is used to place markers on Google Maps, search for relevant photos from Flickr and 500px,
+                and fetch the correct information from Wikipedia. Each of these different data is separated using a "|" character. A typical line looks like the following - <br /><br />
+                <code>Taj Mahal|Agra, UP, India|27.175288|78.042123|Taj Mahal|Taj%20Mahal|taj%20mahal|</code><br /><br />
+                The series of data in this line denote the following information - 
+                <ul>
+                    <li>Name - name of the WHS</li>
+                    <li>Location - city/state, country</li>
+                    <li>Geolocation - latitude</li>
+                    <li>Geolocation - longitude</li>
+                    <li>Flickr Tag - to search Flickr for relevant photos</li>
+                    <li>Wiki Search title - to find the correct article on Wikipedia</li>
+                    <li>500px tag - to search 500px for relevant photos</li>
+                </ul>
+                This text file is parsed by jQuery asynchronous AJAX function <code>$.get()</code>. It first splits the entire file into lines, then each line is split using "|" as the delimiter. So, the information
+                in each line can be extracted independently, and is then put into a two-dimensional array, which is then stored in the local cache. Hence, the text file is accessed only once, and there is no need to 
+                maintain a connection, eliminating this overhead.<br /><br />
+                The entire text file can be viewed <a href="../data/WHS_list.txt" target="_blank">here</a>.
+            </div>
+            <div class="doc-subheading">Google Maps implementation</div>
+            <div class="doc-text">
+                Google Maps is central to the functionality of this website. The Maps object is put inside a <code>div</code> container. It is initiated by the function <code>initiateGoogleMaps()</code> that returns a 
+                map object. The Maps is initialized with central coordinates <code>38.74, -101.64</code>.<br /><br />
+                Once jQuery reads the information contained in the text file into a 2-dimensional array, it populates the map object with markers locating the different WHS. This is done 
+                by the <code>getFlickrPhotosAndMarkers(mapObject, placeData)</code> function, which takes the map object as the first argument and the <code>placeData</code> which is nothing but the 2-dimensional array.
+                For each WHS, it places a new marker with respective latitude and longitude on the map.<br /><br />
+                Now, when the user clicks on a particular marker, jQuery fires off a click event on the particular marker. This event does the following -
+                <ul>
+                    <li>Fetches the name and location (city/state, country) information from the 2-dimensional array</li>
+                    <li>Calls the Flickr API to display a geo-tagged photo (taken at the particular location) in an <code>infoWindow</code></li>
+                    <li>Calls the MediaWiki API with the relevant query to fetch information about the WHS</li>
+                    <li>Calls the 500px API with relevant query tags to fetch photo to be displayed in the photo box on the right</li>
+                    <li>Activates the buttons "More photos" &amp; "More on Wikipedia"</li>
+                    <li>Places title and geolocation information at the top of the Wikipedia article in the middle section</li>
+                </ul> 
+            </div>
+            <div class="doc-subheading">Flickr API</div>
+            <div class="doc-text">
+                In order to show photo of a WHS inside the <code>infoView</code> window of a marker when it is clicked, I have used 
+                Flickr API to fetch the photo using the location coordinates as one of the queries. <br /><br />
+                The API url that fetches the geotagged photo is as below - <br /><br />
+                <code>http://api.flickr.com/services/rest/?&method=flickr.photos.search&api_key={my_key}&tags={tag-name}&lat={latitude}&lon={longitude}&per_page=1&format=json</code>
+                The method that the API uses is: <code>flickr.photos.search</code>, meaning that it searches for photos based on parameters given.<br />
+                For this API call, an API key is needed.<br />
+                The <code>tags</code> parameter is where I give the Flickr photo tags (photos tagged with particular tags). I use related tags, for example for a WHS 'Angkor Wat', i used the 
+                tag 'Angkor%20Wat'. The tag information is taken from the 2-dimensional array.
+                The <code>lat</code> and <code>lon</code> parameters take the latitude and longitude values picked up from the 2-dimensional array.<br />
+                The <code>per_page</code> parameter specifies how many results are to be returned per page. Since I need only one photo to be displayed in the infoView, I have kept it as 1.<br />
+                Finally, the <code>format</code> parameter specifies whether the data the API sends back is to be in XML or JSON format.<br />
+                <br />
+                The Flickr API does not send back the actual URLs of the photos. However, it gives enough information using which we can construct the URL. The information required for this 
+                purpose are - 
+                <ul>
+                    <li>Farm ID</li>
+                    <li>Server ID</li>
+                    <li>Photo ID</li>
+                    <li>Secret ID</li>
+                </ul>
+                Using the above, the formula for constructing the actual photo URL is  - <br />
+                pURL = 'http://farm' + <code>farm</code> + '.static.flickr.com/' + <code>server</code> + '/' + <code>id</code> + '_' + <code>secret</code> + '_s.jpg'<br />
+                The "_s.jpg" specifies that the photo is of small size and in JPEG format.<br />
+                The information from the JSON file is accessed using the class path: <code>data.photos.photo[0].{_name}</code>, for example: <strong>data.photos.photo[0].farmid</strong>.<br /><br />
+                The jQuery uses JSONP as the data format, so the JSON comes wrapped in a dummy JavaScript method.
+                <p>In case there is an error in retrieving data from the API, jQuery fires off an error function that alerts an error message along with the error code.</p>
+            </div>
+            <div class="doc-subheading">MediaWiki API</div>
+            <div class="doc-text"><p>The MediaWiki API is used to fetch basic information from Wikipedia using specific search query. This information is then displayed in the middle section of 
+                the page.</p>
+                <p>The URL for the API is: <code>http://en.wikipedia.org/w/api.php?action=query&prop=extracts&format=json&exintro=&titles=</code></p>
+                <p>From the above URL, we can see that the data that is returned is in JSON format. The <code>action=query</code> means that the API is being called to query content.
+                    <code>prop=extracts</code> means that only specific parts of the articles are to be fetched. <code>exintro</code> forces the API to extract only the introduction information
+                    of the whole article. <code>titles</code> is the parameter which takes the specific tag we use to search the article on Wikipedia.
+                </p>
+                <p>In case there is an error in retrieving data from the API, jQuery fires off an error function that alerts an error message along with the error code.</p>
+                <p>The 'middle section' where the information is displayed has the HTML ID: "innerContentAreaDiv". Once the data is fetched from Wikipedia, jQuery inserts this data into the <code>innerContentAreaDiv</code> using the 
+                following code -</p>
+                <p><code>$("#innerContentAreaDiv").append(item.extract);</code></p> 
+                <p>Here, the data is already coded in HTML, so I did not have to format it accordingly.</p>
+            </div>
+            <div class="doc-subheading">500px API</div>
+            <div class="doc-text"><p>The 500px API is used to provide high quality, large sized photographs of the World Heritage Sites. It also provides photo for the photo box on the right side 
+                of the page. </p>
+                <p>The images are fetched from this API in a similar fashion as in the case of other APIs. Unlike Flickr, 500px API returns the actual image URL. Also, it has options to choose 
+                    different sizes of the same images. Also, the smaller sized photos are cropped into a square aspect ratio. This was a major advantage when displaying photo in the photobox. This did not require me 
+                    to scale images for different aspect ratios into a common aspect ratio and size.
+                </p>
+                <p>The fetched photo is inserted into the photobox using the following code: <code>$("#photoBoxOuter > img").attr('src', data.photos[randomnumber].image_url);</code><br />
+                    Here, <strong>#photoboxOuter</strong> is the HTML ID of the photobox frame. The actual image URL is inserted into the <code>img</code> tag inside this photobox frame. Also, I have chosen to return
+                    20 results, and I can choose any of these at random, to be shown in the photobox by using the random function built into jQuery: <br />
+                    <code>randomnumber = 1 + Math.floor(Math.random() * 20);</code><br />
+                    The JSON data returned is an array of objects. The random function assigns a random number in the range of 0 and 20 (inclusive), and assigns this to a variable <code>random</code>. I use this variable
+                    to access an object in the array of objects returned in the JSON. This functionality ensures that when the user clicks multiple times on the same WHS marker, he/she will be presented with a different 
+                    photo in the photobox.
+                </p>
+                <p>In case there is an error in retrieving data from the API, jQuery fires off an error function that alerts an error message along with the error code.</p>
+
+            </div>
+            <div class="doc-subheading">WHS article title</div>
+            <div class="doc-text"><p>When the user clicks on a marker in Google Maps, the title of the WHS and its coordinates are displayed above the Wikipedia basic information. This functionality is bound to 
+                the click event of the Google Maps marker. When the user clicks a marker, jQuery collects the correspondng title and coordinate information from the 2-dimensional array and inserts them into their respective <code>div</code>
+                tags. This is achieved throught the following code: <code>$("#contentTitle").text(contentTitle);</code><br />
+                Similarly, the coordinates are inserted as follows: <code>$("#lat").text("Latitude: " + latString);</code> and ditto for longitude.</p>
+            </div>
+            <div class="doc-subheading">More Info & More Photos links</div>
+            <div class="doc-text"><p>The user has the option to view more images of a WHS site by clicking on the View More Photos button below the image in the 
+                photobox. Once a marker is clicked, this button is activated. </p>
+                <p>When the user clicks on a marker, jQuery "activates" the more photos link and more on Wikipedia link buttons by inserting specific URLs into their <code>href</code> attributes. This
+                    is achieved through the following code: <code>$("#morePhotos").attr('href', ptagUrl);</code><br />
+                    <code>$("#moreInfo").attr('href', wikipageUrl);</code>
+                </p>
+                <p>While the website opens a new tab when the user clicks on View More Photos button, how does it know which photos to display? Some data needs to migrate from the Mapview page to the new photo display page.
+                    This can be done simply by using query strings. What is transferred are the Wikipedia "page id" (for navigating to Wikipedia page) and tags (in case of opening more photos). In the next page, 
+                    these information is simply extracted from the query string and API's are called. This is a very simple implementation of data migration from one page to another, handled at client-side. The only 
+                    drawback is security - tampering with the query string data. However, this is handled to some extent when the new photo page is opened, the jQuery code checks whether photo tag in the query string matches any of those found in the 2-dimensional array. It displays 
+                    photos only if there is a match.
+                </p>
+            </div>
+            <div class="doc-subheading">Design for iPhone</div>
+            <div class="doc-text">
+                <p>The Mapview page is redesigned for iPhone using CSS <code>@media</code> queries. I have changed the layout of the page. Instead of having three columns - the map area on the left, the content at the center and the photobox on the right, I put everything in a single
+                    column. This ensures that the iPhone user doesnt need to scroll sideways at all. Also, bring the map area at the top and giving a much larger width - almost equal to the width of the phone screen, ensures that the user can 
+                    easily view and operate the Maps. The content area displays the information of the WHS seamlessly, being comfortably padded, and text justified for a pleasant appearance. The photobox is pushed down at the bottom, and takes up more area on the screen, so that the
+                    user can comfortably see the photo in it, and comfortably click on the View More Photos and More on Wikipedia links.
+                </p>
+            </div>
+            
+            <a href="#page-wrapper" class="text-decoration-none"><div class="back-top-link">Back to top</div></a>
+        </div>
+    </div>
+</body>
+</html>

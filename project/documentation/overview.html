@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World of Wonders - Overview</title>
+    <link rel="stylesheet" href="../css/mystyle2.css" />
+    <link rel="stylesheet" href="../css/documentation.css" />
+    <link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rouge+Script' rel='stylesheet' type='text/css'>
+</head>
+    
+<body>
+    
+    <div id="page-wrapper" class="page-wrapper">
+        <div id="headerStrip" class="headerStrip">
+            <div class="title"><a href="home.html">A World of Wonders</a></div>
+            <nav class="topmenu">
+                <ul>
+                    <li class="topmenu-li"><a href="../about.html" target="_blank">About</a></li>
+                    <li class="topmenu-li"><a href="../mapview.html" target="_blank">Explore</a></li>
+                    <li class="topmenu-li"><a href="../../story/index.htm?../project/documentation/">Documentation</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="mobile-nav" class="mobile-nav mobile-nav-display-toggle">
+            <div class="mobile-top-nav">
+                <ul>
+                    <li class="mobile-top-nav-li"><a href="../about.html" target="_blank">About</a></li>
+                    <li class="mobile-top-nav-li"><a href="../mapview.html" target="_blank">Explore</a></li>
+                    <li class="mobile-top-nav-li"><a href="../../story/index.htm?../project/documentation/" target="_blank">Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="doc-container">
+            <div class="doc-heading">Project Overview</div>
+            <div class="doc-text">This page is dedicated to an overview of the project "World of Wonders", a website, developed individually
+                as part of the coursework for the CS5610 - Web Development course, under <a href="http://www.ccs.neu.edu/home/rasala/" target="_blank">Professor Richard Rasala</a>. This course is part of my curriculum
+                for the MS in Computer Science degree at Northeastern University, Boston.
+            </div>
+            <div class="doc-subheading">Objective</div>
+            <div class="doc-text">The objective behind this website is to enable users to appreciate the cultural heritage of our common humanity and 
+                explore such places and structures present around the world. <br />
+                On a personal level, I have a passion for photography and exotic places, including those that have a rich history and significance. The 
+                love of beautiful photographs and desire to visit amazing places led me to think about the World Heritage sites, and develop a web site 
+                based on them.
+            </div>
+            <div class="doc-subheading">Functionalities</div>
+            <div class="doc-text">
+                The main functionalities of this website can be summarized as follows - 
+                <ul>
+                    <li>Ability to browse through some of the most popular World Heritage sites on Google Maps</li>
+                    <li>Retrieve basic information about a WHS when a user clicks on a marker representing its location</li>
+                    <li>To be able to view extended information about a WHS by accessing its Wikipedia link given on the site</li>
+                    <li>Enjoy gorgeous photographs of a WHS by professionals and amatuers alike</li>
+                </ul>
+                Providing such functionalities listed above has been possible through JavaScript implementation of the following APIs -
+                <ul>
+                    <li><a href="https://developers.google.com/" target="_blank">Google API</a> for Google Maps</li>
+                    <li><a href="https://www.flickr.com/services/api/" target="_blank">Flickr API</a> for photographs on Google Maps infoWindows</li>
+                    <li><a href="http://developers.500px.com/" target="_blank">500px API</a> for photographs of WHS</li>
+                    <li><a href="http://www.mediawiki.org/wiki/API:Main_page" target="_blank">MediaWiki API </a>for retreival of basic information about a WHS from Wikipedia</li>
+                </ul>
+                A thorough technical explanation of implementation of these APIs is given <a href="#">here</a> in the project documentation.
+
+            </div>
+            <div class="doc-subheading">Software platform</div>
+            <div class="doc-text">This website is purely based on HTML/CSS. All client side logic has been implemented using jQuery.
+                This website does not require the use of server side code, nor does it call any web services. Therefore, I have avoided 
+                using .NET specific technologies provided by ASP.NET. <br /><br />
+                The data presented on this web site comes from two sources - APIs and a 'flat-file'. Photos &amp; information on WHS sites come 
+                from respective APIs. Their location information required by Google Maps to display them comes from a text file (flat-file). Specific 
+                tag-information, necessary to fetch relevant information from Flickr, 500px and Wikipedia, are also stored in this text-file.<br /><br />
+                During my discussion with Prof. Rasala about the project, I was recommended to use a text file for storing such data instead of 
+                using a database. The reasons for that are as follows - 
+                <ul>
+                    <li>Such data <strong>is not</strong> relational by nature, so no primary key or foreign key is required</li>
+                    <li>Data volume is not humongous, and therefore can be easily managed</li>
+                    <li>Saves unnecessary overhead in accessing the database on server, and maintaing a connection with it, etc</li>
+                    <li>Avoids use of server access when it is quite unnecessary</li>
+                    <li>Very easy to add/remove records</li>
+                    <li>It is easy to parse data on text files using the built-in AJAX capability of jQuery</li>
+                </ul>
+                A detailed description of how data is arranged in the text file and how I access it using jQuery is given <a href="#">here</a> in the project documentation.
+            </div>
+            <div class="doc-subheading">Browser compatibility</div>
+            <div class="doc-text"><p>This website works well across latest versions of all major browsers - IE9, Mozilla Firefox & Google Chrome.</p></div>
+            <div class="doc-subheading">Made for iPhone</div>
+            <div class="doc-text">This website runs well on computer screens. Apart from that, I have ensured a beautiful experience on the iPhone. I have used CSS media queries 
+                to change the layout and styles of elements so that the iPhone user is focused on the content, and does not have to worry about usability and size of elements.
+            </div>
+            <div class="doc-subheading">Copyright information</div>
+            <div class="doc-text">All photographs of World Heritage sites, including those on the <a href="../home.html" target="_blank">home page</a> fading slideshow, belong to the photographers who posted
+                their work on <a href="http://www.flickr.com" target="_blank">Flickr</a> and <a href="http://www.500px.com" target="_blank">500px</a>.
+            </div>
+            <div class="doc-subheading">Acknowledgements</div>
+            <div class="doc-text">I want to take this opportunity to thank <a href="http://www.ccs.neu.edu/home/rasala/" target="_blank">Professor Richard Rasala</a> for his guidance and valuable insights that helped me develop my ideas for the website, and his various 
+                experiments on his <a href="http://net4.ccs.neu.edu/home/rasala/" target="_blank">course web site</a>. I also want to thank <a href="http://net4.ccs.neu.edu/home/jga/" target="_blank">Professor Jose Annunziato</a>, for coming to my section as a guest lecturer and demonstrate the implementation of 
+                a web API using jQuery. Last, but not the least, I want to thank <a href=http://net4.ccs.neu.edu/home/anjusv target="_blank"/>Anju Sreevalsan</a>, my assigned TA for the course, for helping me debug the various experiments I developed during the course, and for providing her valuable insights and 
+                encouragements!
+            </div>
+            <a href="#page-wrapper" class="text-decoration-none"><div class="back-top-link">Back to top</div></a>
+        </div>
+    </div>
+</body>
+</html>
