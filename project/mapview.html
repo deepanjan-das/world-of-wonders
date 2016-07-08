@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World of Wonders - Mapview</title>
+    <!--<link rel="stylesheet" href="css/mapviewstyle.css" />-->
+    <link rel="stylesheet" href="css/mapview2.css" />
+    <link rel="stylesheet" href="css/mystyle2.css" />
+    <link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rouge+Script' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+    <script type="text/javascript" src="js/mapview.js"></script>
+    <!--<script type="text/javascript" src="js/wikimedia.js"></script>-->
+</head>
+<body>
+    <div id="page-wrapper" class="page-wrapper">
+        <div id="headerStrip" class="headerStrip">
+            <div class="title"><a href="home.html">A World of Wonders</a></div>
+            <nav class="topmenu">
+                <ul>
+                    <li class="topmenu-li"><a href="about.html">About</a></li>
+                    <li class="topmenu-li"><a href="mapview.html">Explore</a></li>
+                    <li class="topmenu-li"><a href="../story/index.htm?../project/documentation/" target="_blank">Documentation</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="mobile-nav" class="mobile-nav mobile-nav-display-toggle">
+            <div class="mobile-top-nav">
+                <ul>
+                    <li class="mobile-top-nav-li"><a href="about.html">About</a></li>
+                    <li class="mobile-top-nav-li"><a href="mapview.html">Explore</a></li>
+                    <li class="mobile-top-nav-li"><a href="../story/index.htm?../project/documentation/" target="_blank">Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="mapAreaDiv" class="mapArea boxShadowMap thisDiv"></div>
+        <!--<div id="contentAreaDiv" class="contentArea">
+            <div id="innerContentWrapper">
+                <div id="contentInfo"></div>
+                <div id="contentArticle"></div>
+            </div>
+        </div>-->
+        <div id="contentAreaWrapper">
+            <div id="contentAreaDiv" class="contentArea">
+                <div id="contentTitle" class="contentTitle">
+                    This is the Title
+                </div>
+                <div id="contentLatLngArea" class="contentLatLngArea">
+                    <div id="lat" class="contentLat">Latitude: 24.455728</div>
+                    <div id="lng" class="contentLng">Longitude: 18.66632</div>
+                </div>
+                <div id="innerContentAreaDiv">
+                    <div id="emptyContent" class="emptyContent"></div>
+                </div>
+            </div>
+            <div id="photoBoxOuter">
+                <img src="images/photobox_sample_size3.jpg" />
+                <a href="" id="morePhotos" target="_blank">
+                    <input type="button" id="Button1" value="More Photos" class="buttons" data-phototag="" />
+                </a> 
+                <a href="" id="moreInfo" target="_blank">
+                    <input type="button" id="Button2" value="More on Wikipedia" class="buttons" data-wikitag="" />
+                </a>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>
