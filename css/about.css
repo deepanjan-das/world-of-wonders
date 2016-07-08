@@ -1,0 +1,57 @@
+body {
+}
+
+
+.about {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    width: 60%;
+    overflow: hidden;
+    display: block;
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: justify;
+    background-color: #fff;
+}
+
+    .about p {
+        font-family: 'Pontano Sans', sans-serif;
+        font-size: 16px;
+    }
+
+    .about ul {
+        font-family: 'Pontano Sans', sans-serif;
+        font-size: 16px;
+    }
+
+    .about-title {
+        font-family: 'Pontano Sans', sans-serif;
+        font-weight: 200;
+        font-size: 38px;
+        text-align: center;
+        color: #4775ff;
+    }
+
+.about-heading {
+    font-family: 'Pontano Sans', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    color: #4775ff;
+}
+
+/*iPhone portrait mode*/
+@media screen and (max-width: 480px) {
+    .about {
+        width: 90%;
+    }
+}
+
+/*iPhone landscape mode*/
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .about {
+        width: 90%;
+    }
+}
