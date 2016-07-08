@@ -1,0 +1,57 @@
+Mesa Verde National Park|Mesa Verde, CO|37.247461|-108.462257|Mesa Verde National Park|Mesa%20Verde%20National%20Park|Mesa%20Verde|
+Yellowstone National Park|Yellowstone National Park, WY|44.481735|-110.597200|Yellowstone National Park|Yellowstone%20National%20Park|Yellowstone%20National%20Park|
+Grand Canyon National Park|Grand Canyon, AZ|36.166072|-112.113934|Grand Canyon National Park|Grand%20Canyon|Grand%20Canyon|
+Statue of Liberty|New York City, NY|40.690250|-74.044467|Statue of Liberty|Statue%20of%20Liberty|Statue%20of%20Liberty|
+Independence Hall|Philadelphia, PA|39.951766|-75.148744|Independence Hall|Independence%20Hall|Independence%20Hall|
+Yosemite National Park|Yosemite Village, CA|37.865322|-119.538329|Yosemite National Park|Yosemite%20National%20Park|Yosemite|
+Humayun's Tomb|New Delhi, India|28.593300|77.250666|Humayuns tomb|Humayun%27s%20Tomb|humayun%27s%20tomb|
+Qutab Minar|New Delhi, India|28.524408|77.185476|Qutb Minar|Qutb%20Minar|Qutb%20Minar|
+Group of Monuments at Hampi|Bellary, Karnataka, India|15.337755|76.475011|Group of Monuments at Hampi|Hampi|Hampi|
+Ajanta Caves|Maharashtra, India|20.551962|75.703393|Ajanta Caves|Ajanta%20Caves|Ajanta%20Caves|
+Taj Mahal|Agra, UP, India|27.175288|78.042123|Taj Mahal|Taj%20Mahal|taj%20mahal|
+Angkor Wat|Krong Siem Reap, Cambodia|13.413046|103.866971|Angkor|Angkor%20Wat|angkor|
+Acropolis|Athens, Greece|37.971748|23.725749|acropolis|Acropolis%20of%20Athens|Acropolis|
+Bagan|Bagan, Myanmar|21.172456|94.862365|bagan|Bagan|Bagan|
+Galapagos Islands|Galapagos, Ecuador|-0.584226|-90.358040|galapagos|Gal%C3%A1pagos%20Islands|Galapagos%20Islands|
+Goreme National Park|Goreme, Turkey|38.655613|34.829343|goreme|G%C3%B6reme|goreme|
+Machu Picchu|Aguas Calientes, Peru|-13.163340|-72.545859|machu picchu|Machu%20Picchu|Machu%20Picchu|
+Mont Saint-Michel|Le Mont-Saint-Michel, France|48.635961|-1.511183|mont-saint-michel|Mont%20Saint-Michel|le%20mont%20saint%20michel|
+Petra Treasury|Wadi Musa, Petra, Jordan|30.325427|35.442581|petra|Petra|Petra|
+Pyramids of Giza|Al Haram, Giza, Egypt|29.979505|31.134267|pyramids of giza|Great%20Pyramid%20of%20Giza|giza|
+Rapa Nui|Chile|-27.072600|-109.348535|rapa nui|Easter%20Island|Rapa%20Nui|
+Serengeti National Park|Serengeti, Tanzania|-2.333028|34.833333|serengeti national park|Serengeti%20National%20Park|serengeti|
+Sigiriya Rock Fortress|Sigiriya, Sri Lanka|7.956797|80.759575|sigiriya|Sigiriya|sigiriya|
+Valletta|Malta|35.898787|14.513458|valletta|Valletta|valletta|
+Monastery of Haghpat|Armenia|41.093964|44.711957|Haghpat|Haghpat%20Monastery|Haghpat|
+Fraser Island|Queensland, AU|-25.211246|153.156926|fraser%20island|Fraser%20Island|fraser%20island|
+Sydney Opera House|Sydney NSW, AU|-33.856441|151.215133|Sydney%20Opera%20House|Sydney%20Opera%20House|Opera%20House|
+Historic City of Bruges|Bruges, Belgium|51.209290|3.220085|bruges|Bruges|bruges|
+Rideau Canal|Ontario, Canada|45.404719|-75.681013|Rideau%20Canal|Rideau%20Canal|Rideau%20Canal|
+Kronborg Castle|Kronborg, Denmark|56.039161|12.621166|Kronborg%20Castle|Kronborg|Kronborg|
+Cologne Cathedral|Cologne, Germany|50.941410|6.958313|Cologne%20cathedral|Cologne%20Cathedral|cologne%20cathedral|
+Wartburg Castle|Wartburg, Germany|50.966555|10.306310|wartburg%20castle|Wartburg|wartburg%20castle|
+Delphi|Delphi, Greece|38.490540|22.496970|Delphi|Delphi|delphi|
+Mystras|Mistras, Greece|37.068762|22.374876|Mystra|Mystras|Mystras|
+Vatican City|Vatican City, Rome|41.903536|12.455178|Vatican%20City|Vatican%20City|Eternal%20City|
+Konark Sun Temple|Orissa, India|19.887812|86.094557|Konark%20Sun%20Temple|Konark%20Sun%20Temple|Konark|
+Elephanta Caves|Mumbai, India|18.963637|72.931636|elephanta%20caves|Elephanta%20Caves|Elephanta%20Caves|
+Mount Fuji|Shizuoka, Japan|35.364102|138.728120|Mount%20Fuji|Mount%20Fuji|fujisan|
+Hiroshima Peace Memorial|Hiroshima, Japan|34.392779|132.452331|Hiroshima_Peace_Memorial_Park|Hiroshima%20Peace%20Memorial|Hiroshima%20Peace%20Memorial|
+Byblos|Byblos, Lebanon|34.123908|35.651928|byblos|Byblos|byblos|
+Baalbek|Baalbek, Lebanon|34.005735|36.210997|Baalbek|Baalbek|Baalbek|
+Lumbini|Lumbini, Nepal|27.487439|83.277370|Lumbini|Lumbini|Lumbini|
+Kathmandu Valley|Kathmandu, Nepal|27.666736|85.349990|Kathmandu%20Valley|Kathmandu%20Valley|kathmandu%20valley|
+Auschwitz Concentration Camp|Auschwitz, Poland|50.035910|19.178341|auschwitz|Auschwitz%20concentration%20camp|auschwitz|
+Jongmyo Shrine|Seoul, South Korea|37.574808|126.994111|Jongmyo%20Shrine|Jongmyo|JongMyo%20Shrine|
+Kremlin|Moscow, Russia|55.752195|37.617509|Kremlin|Moscow%20Kremlin|Kremlin|
+Al-Hijr|Madain Saleh, Saudi Arabia|26.792364|37.951004|madain%20saleh|Mada%27in%20Saleh|Al%20Hijr|
+Burgos Cathedral|Burgos, Spain|42.341007|-3.704397|Burgos%20Cathedral|Burgos%20Cathedral|Burgos%20Cathedral|
+Old City of Salamanca|Salamanca, Spain|40.973602|-5.663725|salamanca|Salamanca|Salamanca|
+Golden Temple Dambulla|Dambulla, Sri Lanka|7.854575|80.651409|Dambulla|Dambulla%20cave%20temple|dambulla|
+City of Bern|Bern, Switzerland|46.950182|7.394958|bern|Bern|Bern|
+Kilimanjaro National Park|Tanzania|-3.080639|37.355301|Kilimanjaro%20National%20Park|Kilimanjaro%20National%20Park|kilimanjaro|
+Ayutthaya|Ayutthaya, Thailand|14.357601|100.568756|Ayutthaya|Ayutthaya%20Historical%20Park|ayutthaya|
+Stonehenge|Wiltshire, UK|51.178939|-1.826162|Stonehenge|Stonehenge|stonehenge|
+Canterbury Cathedral|Kent, UK|51.279872|1.083066|Canterbury%20Cathedral|Canterbury%20Cathedral|Canterbury%20Cathedral|
+
+
