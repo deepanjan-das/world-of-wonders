@@ -1,0 +1,178 @@
+﻿body {
+    background-color: #f8f8f8;
+    
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+.boxShadowMap {
+   -webkit-box-shadow: 14px 3px 45px -20px rgba(107,103,107,1);
+   -moz-box-shadow: 14px 3px 45px -20px rgba(107,103,107,1);
+   box-shadow: 14px 3px 45px -20px rgba(107,103,107,1);
+}
+
+#placeListArea {
+    left: 40px;
+    margin-left: 2em;
+    margin-top: 10%;
+    margin-right: 3px;
+    overflow: hidden;
+    width: 20%;
+    min-height: 580px;
+    display: block;
+    background-color: white;
+    border-radius: 4px;
+}
+
+#placesFormDiv {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+    vertical-align: central;
+    display: block;
+}
+
+.top-infobar {
+    
+    margin-top: 50px;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    z-index: -1;
+    background-color: transparent;
+    position: relative;
+} 
+
+
+
+.gallery-wrapper {
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    
+}
+
+.photos {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 3em;
+}
+
+#tblInfo {
+    width: 100%;
+}
+
+#tblInfo-title-col {
+    padding-left: 8%;
+}
+
+#tblInfo-photog-col {
+    padding-left: 8%;
+}
+
+#photo-title {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: xx-large;
+}
+
+#photog-name {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: larger;
+}
+
+.large-monitor-display-toggle {
+    display: block;
+}
+
+.mobile-display-toggle {
+    display: none;
+}
+
+.photoTitle {
+    position: absolute;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: xx-large;
+    padding-left: 8%;
+    opacity: 0;
+}
+
+    .revealTitle {
+        opacity: 1;
+        position: static;
+        transition: 1s opacity;
+    } 
+
+.photogName {
+    position: absolute;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: larger;
+    padding-left: 8%;
+    opacity: 0;
+}
+
+    .revealPhotog {
+        opacity: 1;
+        position: static;
+        transition: 1s opacity;
+    }
+
+.mobile-photo-title {
+    font-family:'Lato', sans-serif;
+    font-weight: 700;
+    font-size: large;
+    padding-left: 1%;
+}
+.mobile-photog-name {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: medium;
+    padding-left: 1%;
+}
+
+/*iPhone portrait mode*/
+@media screen and (max-width: 320px) {
+    .large-monitor-display-toggle {
+        display: none;
+    }
+
+    .mobile-display-toggle {
+        display: block;
+    }
+    .mobile-gallery-wrapper {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 60px;
+    }
+}
+
+/*iPhone landscape mode*/
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .large-monitor-display-toggle {
+        display: none;
+    }
+
+    .mobile-display-toggle {
+        display: block;
+    }
+    .mobile-gallery-wrapper {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 60px;
+    }
+
+}

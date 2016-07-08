@@ -1,0 +1,16 @@
+﻿.autoSlideShow {
+    width: 100%;
+    position: relative;
+    height: 38.45vw;/*height in terms of viewport width for the sake of responsiveness, originally was 525px*/
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+    .autoSlideShow > div {
+        width:100%;
+        position: absolute;
+        margin: 0 auto;
+    }
+
+

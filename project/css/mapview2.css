@@ -1,0 +1,238 @@
+﻿body {
+    background-color: #f8f8f8;
+    padding: 0;
+}
+
+.mapArea {
+    float: left;
+    /*margin-left: 2.2em;*/
+    left: 40px;
+    margin-top: 3.2em;
+    margin-right: 5px;
+    overflow: hidden;
+    width: 26%;
+    /*min-height: 580px;*/
+    height: 580px;
+    /*height: 100%;*/
+    border: 2px solid white;
+    /*background-color: grey;*/
+    z-index: -1;
+    display: block;
+    padding: 1px;
+}
+.thisDiv {resize:both;}
+
+
+.boxShadowMap {
+   -webkit-box-shadow: 14px 3px 45px -20px rgba(107,103,107,1);
+   -moz-box-shadow: 14px 3px 45px -20px rgba(107,103,107,1);
+   box-shadow: 14px 3px 45px -20px rgba(107,103,107,1);
+}
+
+#contentAreaWrapper {
+    float: right;
+    width: 68%;
+    height: auto;
+    margin-top: 5%;
+}
+
+
+.contentArea {
+    margin-top: 1%;
+    float: left;
+    width: 60%;
+    overflow: hidden;
+    height: auto;
+    display: block;
+    overflow: hidden;
+}
+
+.contentTitle {
+    width: 100%;
+    color: black;
+    font-family: 'Pontano Sans', sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.contentLatLngArea {
+    width: 100%;
+    color: #707070;
+    font-family: 'Pontano Sans', sans-serif;
+    font-size: 18px;
+}
+
+#innerContentAreaDiv {
+    width: 99%;
+    font-family: 'Pontano Sans', sans-serif;
+    font-size: small;
+    text-align: justify;
+    padding: 5px;
+}
+#photoBoxOuter {
+    float: right;
+    margin-top: 4%;
+    margin-right: 3%;
+    width: 30%;
+    /*height: 283px;*/
+    height: auto; 
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background-color: #f0f0f0;
+    -webkit-box-shadow: 0px 3px 9px 0px rgba(50, 50, 50, 0.6);
+    -moz-box-shadow:    0px 3px 9px 0px rgba(50, 50, 50, 0.6);
+    box-shadow:         0px 3px 9px 0px rgba(50, 50, 50, 0.6);
+}
+
+    #photoBoxOuter img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+#morePhotos, #moreInfo {
+    text-decoration: none;
+}
+
+.buttons {
+    display: block;
+    height: 30px;
+    color:#777777;
+    margin: 10px auto;
+    -moz-box-shadow:inset 0px 0px 3px -13px #ffffff;
+	-webkit-box-shadow:inset 0px 0px 3px -13px #ffffff;
+	box-shadow:inset 0px 0px 3px -13px #ffffff;
+	background-color:transparent;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+	text-indent:0;
+    font-family: 'Pontano Sans', sans-serif;
+	border:1px solid #857e85;
+}
+
+    .buttons:hover {
+        display: block;
+        height: 30px;
+        color: black;
+	    border:1px solid black;
+    }
+
+
+/*iPhone portrait mode*/
+@media screen and (max-width: 320px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .mapArea {
+        float: none;
+        width: 95%;
+        left: 0;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 200px;
+        padding: 1px;
+        /*position: absolute;*/
+        z-index: 1; /*prior value of -1 was causing Maps to be unresponsive in this viewport size, and layout*/
+    }
+
+    #contentAreaWrapper {
+        float: none;
+        width: 100%;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contentArea {
+        float: none;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #innerContentAreaDiv {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contentTitle, .contentLatLngArea {
+        padding-left: 15px;
+    }
+
+    #photoBoxOuter {
+        float: none;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+}
+
+/*iPhone landscape mode*/
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .mapArea {
+        float: none;
+        width: 90%;/*decreased width so that one can scroll down the page without zooming in/out the map*/
+        left: 0;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 200px;
+        padding: 1px;
+        /*position: absolute;*/
+        z-index: 1; /*prior value of -1 was causing Maps to be unresponsive in this viewport size, and layout*/
+    }
+
+    #contentAreaWrapper {
+        float: none;
+        width: 100%;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contentArea {
+        float: none;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #innerContentAreaDiv {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contentTitle, .contentLatLngArea {
+        padding-left: 15px;
+    }
+
+    #photoBoxOuter {
+        float: none;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
