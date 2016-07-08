@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World of Wonders - Overview - Homepage</title>
+    <link rel="stylesheet" href="../css/mystyle2.css" />
+    <link rel="stylesheet" href="../css/documentation.css" />
+    <link href='http://fonts.googleapis.com/css?family=Pontano+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rouge+Script' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <div id="page-wrapper" class="page-wrapper">
+        <div id="headerStrip" class="headerStrip">
+            <div class="title"><a href="home.html">A World of Wonders</a></div>
+            <nav class="topmenu">
+                <ul>
+                    <li class="topmenu-li"><a href="../about.html" target="_blank">About</a></li>
+                    <li class="topmenu-li"><a href="../mapview.html" target="_blank">Explore</a></li>
+                    <li class="topmenu-li"><a href="../../story/index.htm?../project/documentation/">Documentation</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="mobile-nav" class="mobile-nav mobile-nav-display-toggle">
+            <div class="mobile-top-nav">
+                <ul>
+                    <li class="mobile-top-nav-li"><a href="../about.html" target="_blank">About</a></li>
+                    <li class="mobile-top-nav-li"><a href="../mapview.html" target="_blank">Explore</a></li>
+                    <li class="mobile-top-nav-li"><a href="../../story/index.htm?../project/documentation/" target="_blank">Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="doc-container">
+            <div class="doc-heading">World of Wonders - Homepage</div>
+            <div class="doc-text">The <a href="../home.html" target="_blank">home page</a> is the one that users will see first when they visit the web site.
+            </div>
+            <div class="doc-subheading">Features</div>
+            <div class="doc-text">This page features a fading slideshow of photos of four World Heritage sites. There is a highlighted feature 
+                suggesting that the user can view photos of WHS and explore their location on Google Maps. Below that, the user is presented with a 
+                "Start Here" button, that launches them into the exprience of exploring WHS locations featured on this site. <br /><br />
+                There is a top navigation area at the top-right corner (for desktop browsers) and just below the site logo (for iPhone browsers).<br /><br />
+                The layout of the site features a top header for logo and navigation (another one for navigation on iPhone), a 
+                fading slideshow container, a two column layout for advertising the photo and Google Maps experience, and a single column layout for "Start Here"
+                button and the footer.
+            </div>
+            <div class="doc-subheading">Implementation of fading slideshow</div>
+            <div class="doc-text">
+                The slideshow automatically fades in-between photos. This is made possible using CSS and jQuery. In CSS, I put the <code>img</code> tags
+                inside a <code>div</code> container. The position of the containing <code>div</code> is <i>relative</i> and those of the <code>img</code> tags are
+                <i>absolute</i> so that the images are stacked one on top of the other. The jQoery code cycles through the photos using the <code>setInterval()</code>
+                built-in function. It uses a <code>fadeOut</code> and <code>fadeIn</code> values of 1000ms. The jQuery function also hides all the images at first, by
+                the following code: <code>$("#autoSlide > div:gt(0)").hide();</code> and then shows the current one it cycles through. The time interval between each subsequent
+                image is set as 4000ms. The jQuery code can be found <a href="../js/homeslideshow.js">here</a>, and the CSS can be found <a href="../css/homeslideshow.css">here</a>.
+
+            </div>
+            <div class="doc-subheading">Design for iPhone</div>
+            <div class="doc-text">
+                The home page is redesigned for iPhone using CSS <code>@media</code> queries. I have covered the portrait as well as the landscape orientation modes by using the following 
+                <code>@media</code> queries - 
+                <ul>
+                    <li>Portrait mode: <code>@media screen and (max-width: 320px)</code></li>
+                    <li>Landscape mode: <code>@media only screen and (min-width: 480px) and (max-width: 1024px)</code></li>
+                </ul>
+                The media queries change the two-column layout of the mid-section that advertise the photo and Google Maps features, into a single column layout. Also, for the iPhone, the usual
+                top navigation menu at the top-right disappears, and in its place appears a new navigation bar just below the logo. The logo itself is enlarged. For this, I toggle the <code>display: none</code>
+                and <code>display: block</code> display modes through CSS. By default, in a computer monitor, the mobile navigation bar is hidden. On an iPhone, the media query detects the device, and hides the 
+                regular navigation bar while revealing the mobile navigation bar, and makes further changes to layouts and element sizes.<br /><br />
+                The CSS for the same can be found <a href="../css/mystyle2.css">here</a>. The classes concerning navigation bar are - 
+                <ul>
+                    <li>Regular desktop navigation bar: <code>topmenu</code>, <code>topmenu-li</code></li>
+                    <li>iPhone navigation bar: <code>mobile-nav</code>, <code>mobile-nav-display-toggle</code>, <code>mobile-top-nav</code>, <code>mobile-top-nav-li</code></li>
+                </ul>
+            </div>
+            
+            <a href="#page-wrapper" class="text-decoration-none"><div class="back-top-link">Back to top</div></a>
+        </div>
+    </div>
+</body>
+</html>
